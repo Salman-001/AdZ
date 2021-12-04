@@ -103,7 +103,7 @@ var elem=$('#container ul');
 <div class="header">
 		<div class="container">
 			<div class="logo">
-				<a href="index.html">ADZ</a> <span>Vehicles</span>
+				<a href="index.html">ADZ</a> <span>Equipment</span>
 			</div>
 			<div class="header-right">
 			<a class="account" href="login.html">My Account</a>
@@ -125,7 +125,7 @@ var elem=$('#container ul');
 					<div class="search">
 						<div id="custom-search-input">
 						<div class="input-group">
-							<form action="searchvehicles.php" method="GET">
+							<form action="searchequipment.php" method="GET">
 							<input type="text" class="form-control input-lg" placeholder="Search" name="query"/>
 							<span class="input-group-btn">
 								<button class="btn btn-info btn-lg" type="submit" value="search">
@@ -142,14 +142,14 @@ var elem=$('#container ul');
 			<ol class="breadcrumb" style="margin-bottom: 5px;">
 			  <li><a href="index.html">Home</a></li>
 			  <li><a href="categories.html">Categories</a></li>
-			  <li class="active">Vehicles</li>
+			  <li><a href="equipment.php">Equipment</a></li>
+			  <li class="active">Search</li>
 			</ol>
 			<div class="ads-grid">				
 				<div class="range">
 					<h3 class="sear-head">Price range</h3>
 							<ul class="dropdown-menu6">
 								<li>
-									                
 									<div id="slider-range"></div>							
 										<input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
 									</li>			
@@ -161,8 +161,8 @@ var elem=$('#container ul');
 							 $( "#slider-range" ).slider({
 										range: true,
 										min: 0,
-										max: 9000,
-										values: [ 50, 6000 ],
+										max: 1000000,
+										values: [ 0, 1000000 ],
 										slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
 										}
 							 });
@@ -172,28 +172,6 @@ var elem=$('#container ul');
 
 							</script>
 							
-				</div>
-				<div class="brand-select">
-					<h3 class="sear-head">Brand name</h3>
-					  <select class="selectpicker" data-live-search="true">
-					  <option data-tokens="All">All</option>
-					  <option data-tokens="Audi">Audi</option>
-					  <option data-tokens="Bentley">Bentley</option>
-					  <option data-tokens="BMW">BMW</option>
-					  <option data-tokens="Chevrolet">Chevrolet</option>
-					  <option data-tokens="Ferrari">Ferrari</option>
-					  <option data-tokens="Fiat">Fiat</option>
-					  <option data-tokens="Force Motors">Force Motors</option>
-					  <option data-tokens="Ford">Ford</option>
-					  <option data-tokens="Hindustan Motors">Hindustan Motors</option>
-					  <option data-tokens="Honda">Honda</option>
-					  <option data-tokens="Hyundai">Hyundai</option>
-					  <option data-tokens="Isuzu">Isuzu</option>
-					  <option data-tokens="Jaguar">Jaguar</option>
-					  <option data-tokens="Lamborghini">Lamborghini</option>
-					  <option data-tokens="Landrover">Landrover</option>
-					  <option data-tokens="Other Brands">Other Brands</option>
-					</select>
 				</div>
 				</div>
 				</div>
@@ -216,7 +194,7 @@ var elem=$('#container ul');
 									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
 									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
 								</div>
-								<div class="sort">
+								<!--<div class="sort">
 								   <div class="sort-by">
 										<label>Sort By : </label>
 										<select>
@@ -225,13 +203,15 @@ var elem=$('#container ul');
 														<option value="">Sale</option>
 										</select>
 									   </div>
-									 </div>
+									 </div>-->
 								<div class="clearfix"></div>
 							<ul class="list">
                                 <?php
                                 include('connection.php');
+								//include 'mobilephones&acc.php' ;
 
-                                $sql = "SELECT * FROM PRODUCTS WHERE category_id=1 or category_id=2";
+								$filter = $_GET['search'];
+                                $sql = "SELECT * FROM PRODUCTS WHERE category_id=7 WHERE name LIKE '$filter'";
                                 $result = $connection->query($sql);
 
                                 if ($result->num_rows>0){
@@ -275,109 +255,6 @@ var elem=$('#container ul');
 						</div>
 							</div>
 						</div>
-						<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
-						 <div>
-												<div id="container">
-								<div class="view-controls-list" id="viewcontrols">
-									<label>view :</label>
-									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
-									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
-								</div>
-								<div class="sort">
-								   <div class="sort-by">
-										<label>Sort By : </label>
-										<select>
-														<option value="">Both</option>
-														<option value="">Rent</option>
-														<option value="">Sale</option>
-										</select>
-									   </div>
-									 </div>
-								<div class="clearfix"></div>
-							<ul class="list">
-							<?php
-                                include('connection.php');
-
-                                $sql = "SELECT * FROM PRODUCTS WHERE category_id=1";
-                                $result = $connection->query($sql);
-
-                                if ($result->num_rows>0){
-                                    while($rows = $result->fetch_assoc()){
-                                        $img = $rows['pictures'];
-                                        ?>
-                                        <img src='<?php echo $rows['pictures']; ?>' alt="Preview not Available">
-                                        <section class="list-left">
-                                            <h5 class="title">
-                                                <?php echo $rows['name']; ?>
-                                            </h5>
-                                            <span class="adprice">
-                                                <?php echo $rows['description']; ?>
-                                            </span>
-                                            <span class="adprice">
-                                                <?php echo $rows['price']; ?>
-                                            </span>
-                                        </section>
-                                <?php
-                                    }
-                                }else{
-                                    echo "0 Results";
-                                }
-                                ?>
-							</ul>
-						</div>
-							</div>
-						</div>
-						<div role="tabpanel" class="tab-pane fade" id="samsa" aria-labelledby="samsa-tab">
-						  <div>
-												<div id="container">
-								<div class="view-controls-list" id="viewcontrols">
-									<label>view :</label>
-									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
-									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
-								</div>
-								<div class="sort">
-								   <div class="sort-by">
-										<label>Sort By : </label>
-										<select>
-														<option value="">Both</option>
-														<option value="">Rent</option>
-														<option value="">Sale</option>
-										</select>
-									   </div>
-									 </div>
-								<div class="clearfix"></div>
-							<ul class="list">
-							<?php
-                                include('connection.php');
-
-                                $sql = "SELECT * FROM PRODUCTS WHERE category_id=1";
-                                $result = $connection->query($sql);
-
-                                if ($result->num_rows>0){
-                                    while($rows = $result->fetch_assoc()){
-                                        $img = $rows['pictures'];
-                                        ?>
-                                        <img src='<?php echo $rows['pictures']; ?>' alt="Preview not Available">
-                                        <section class="list-left">
-                                            <h5 class="title">
-                                                <?php echo $rows['name']; ?>
-                                            </h5>
-                                            <span class="adprice">
-                                                <?php echo $rows['description']; ?>
-                                            </span>
-                                            <span class="adprice">
-                                                <?php echo $rows['price']; ?>
-                                            </span>
-                                        </section>
-                                <?php
-                                    }
-                                }else{
-                                    echo "0 Results";
-                                }
-                                ?>
-							</ul>
-						</div>
-							</div>
 						</div>
 						<!--
 						<ul class="pagination pagination-sm">

@@ -112,7 +112,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				  <!-- search bar code end -->
 				<div class="container">
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab3">
+						<a href="vehicles.php">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-car"></i></div>
@@ -122,7 +122,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab12">
+						<a href="realestate.php">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-home"></i></div>
@@ -132,7 +132,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html">
+						<a href="mobilephones&acc.php">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-mobile"></i></div>
@@ -142,7 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab5">
+						<a href="furniture.php">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-asterisk"></i></div>
@@ -152,7 +152,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab10">
+						<a href="equipment.php">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-shield"></i></div>
@@ -257,10 +257,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"></div>
 				</div>
 			</div>
-			<div class="trending-ads">
-				<div class="container">
+			<!-- <div class="trending-ads">
+				<div class="container"> -->
 				<!-- slider -->
-				<div class="trend-ads">
+				<!-- <div class="trend-ads">
 					<h2>Trending Ads</h2>
 							<ul id="flexiselDemo3">
 								<li>
@@ -418,7 +418,55 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						});
 					   </script>
 					   <script type="text/javascript" src="js/jquery.flexisel.js"></script>
-					</div>   
+					</div>    -->
+
+							<ul class="list">
+                                <?php
+                                include('connection.php');
+
+                                $sql = "SELECT * FROM PRODUCTS";
+                                $result = $connection->query($sql);
+
+                                if ($result->num_rows>0){
+                                    while($rows = $result->fetch_assoc()){
+                                        $img = $rows['pictures'];
+                                        ?>
+                                        <img src='<?php echo $rows['pictures']; ?>' alt="Preview not Available">
+                                        <section class="list-left">
+                                            <h5 class="title">
+                                                <?php echo $rows['name']; ?>
+                                            </h5>
+                                            <span class="adprice">
+                                                <?php echo $rows['description']; ?>
+                                            </span>
+                                            <span class="adprice">
+                                                <?php echo $rows['price']; ?>
+                                            </span>
+                                        </section>
+                                <?php
+                                    }
+                                }else{
+                                    echo "0 Results";
+                                }
+                                ?>
+								<!--For Future Purposes
+									<a href="single.html">
+									<li>
+									<img src="images/c1.jpg" title="" alt="" />
+									<section class="list-left">
+									<h5 class="title">There are many variations of passages of Lorem Ipsum</h5>
+									<span class="adprice">$290</span>
+									<p class="catpath">Cars » Other Vehicles</p>
+									</section>
+									<section class="list-right">
+									<span class="date">Today, 17:55</span>
+									<span class="cityname">City name</span>
+									</section>
+									<div class="clearfix"></div>
+									</li> 
+								</a>-->
+							</ul>
+
 			</div>
 		</div>
 			<!-- //slider 1 finishes -->		

@@ -142,14 +142,14 @@ var elem=$('#container ul');
 			<ol class="breadcrumb" style="margin-bottom: 5px;">
 			  <li><a href="index.html">Home</a></li>
 			  <li><a href="categories.html">Categories</a></li>
-			  <li class="active">Vehicles</li>
+			  <li><a href="vehicles.php">Vehicles</a></li>
+			  <li class="active">Search</li>
 			</ol>
 			<div class="ads-grid">				
 				<div class="range">
 					<h3 class="sear-head">Price range</h3>
 							<ul class="dropdown-menu6">
 								<li>
-									                
 									<div id="slider-range"></div>							
 										<input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
 									</li>			
@@ -230,8 +230,10 @@ var elem=$('#container ul');
 							<ul class="list">
                                 <?php
                                 include('connection.php');
+								//include 'vehicles.php' ;
 
-                                $sql = "SELECT * FROM PRODUCTS WHERE category_id=1 or category_id=2";
+								$filter = $_GET['search'];
+                                $sql = "SELECT * FROM PRODUCTS WHERE category_id=1 OR category_id=2 WHERE name LIKE '$filter'";
                                 $result = $connection->query($sql);
 
                                 if ($result->num_rows>0){
@@ -275,109 +277,6 @@ var elem=$('#container ul');
 						</div>
 							</div>
 						</div>
-						<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
-						 <div>
-												<div id="container">
-								<div class="view-controls-list" id="viewcontrols">
-									<label>view :</label>
-									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
-									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
-								</div>
-								<div class="sort">
-								   <div class="sort-by">
-										<label>Sort By : </label>
-										<select>
-														<option value="">Both</option>
-														<option value="">Rent</option>
-														<option value="">Sale</option>
-										</select>
-									   </div>
-									 </div>
-								<div class="clearfix"></div>
-							<ul class="list">
-							<?php
-                                include('connection.php');
-
-                                $sql = "SELECT * FROM PRODUCTS WHERE category_id=1";
-                                $result = $connection->query($sql);
-
-                                if ($result->num_rows>0){
-                                    while($rows = $result->fetch_assoc()){
-                                        $img = $rows['pictures'];
-                                        ?>
-                                        <img src='<?php echo $rows['pictures']; ?>' alt="Preview not Available">
-                                        <section class="list-left">
-                                            <h5 class="title">
-                                                <?php echo $rows['name']; ?>
-                                            </h5>
-                                            <span class="adprice">
-                                                <?php echo $rows['description']; ?>
-                                            </span>
-                                            <span class="adprice">
-                                                <?php echo $rows['price']; ?>
-                                            </span>
-                                        </section>
-                                <?php
-                                    }
-                                }else{
-                                    echo "0 Results";
-                                }
-                                ?>
-							</ul>
-						</div>
-							</div>
-						</div>
-						<div role="tabpanel" class="tab-pane fade" id="samsa" aria-labelledby="samsa-tab">
-						  <div>
-												<div id="container">
-								<div class="view-controls-list" id="viewcontrols">
-									<label>view :</label>
-									<a class="gridview"><i class="glyphicon glyphicon-th"></i></a>
-									<a class="listview active"><i class="glyphicon glyphicon-th-list"></i></a>
-								</div>
-								<div class="sort">
-								   <div class="sort-by">
-										<label>Sort By : </label>
-										<select>
-														<option value="">Both</option>
-														<option value="">Rent</option>
-														<option value="">Sale</option>
-										</select>
-									   </div>
-									 </div>
-								<div class="clearfix"></div>
-							<ul class="list">
-							<?php
-                                include('connection.php');
-
-                                $sql = "SELECT * FROM PRODUCTS WHERE category_id=1";
-                                $result = $connection->query($sql);
-
-                                if ($result->num_rows>0){
-                                    while($rows = $result->fetch_assoc()){
-                                        $img = $rows['pictures'];
-                                        ?>
-                                        <img src='<?php echo $rows['pictures']; ?>' alt="Preview not Available">
-                                        <section class="list-left">
-                                            <h5 class="title">
-                                                <?php echo $rows['name']; ?>
-                                            </h5>
-                                            <span class="adprice">
-                                                <?php echo $rows['description']; ?>
-                                            </span>
-                                            <span class="adprice">
-                                                <?php echo $rows['price']; ?>
-                                            </span>
-                                        </section>
-                                <?php
-                                    }
-                                }else{
-                                    echo "0 Results";
-                                }
-                                ?>
-							</ul>
-						</div>
-							</div>
 						</div>
 						<!--
 						<ul class="pagination pagination-sm">
