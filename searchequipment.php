@@ -211,7 +211,7 @@ var elem=$('#container ul');
 								//include 'mobilephones&acc.php' ;
 
 								$filter = $_GET['search'];
-                                $sql = "SELECT * FROM PRODUCTS WHERE category_id=7 WHERE name LIKE '$filter'";
+                                $sql = "SELECT * FROM query_view WHERE category_id=7 WHERE name LIKE '$filter'";
                                 $result = $connection->query($sql);
 
                                 if ($result->num_rows>0){
@@ -221,13 +221,17 @@ var elem=$('#container ul');
                                         <img src='<?php echo $rows['pictures']; ?>' alt="Preview not Available">
                                         <section class="list-left">
                                             <h5 class="title">
-                                                <?php echo $rows['name']; ?>
+                                                <?php echo $rows['product_name']; ?>
                                             </h5>
+											<span class="adprice">
+                                               <i>Seller: <?php echo $rows['first_name'] . " " . $rows['last_name']; ?>
+												Phone Number: <?php echo $rows['phone_number'];?></i>
+                                            </span>
                                             <span class="adprice">
                                                 <?php echo $rows['description']; ?>
                                             </span>
                                             <span class="adprice">
-                                                <?php echo $rows['price']; ?>
+                                                $ <?php echo $rows['price']; ?>
                                             </span>
                                         </section>
                                 <?php
