@@ -17,7 +17,8 @@ $ver_row = $ver_res->fetch_assoc();
 $ver_json = json_encode($ver_row);
 
 //modified the inputted verification number
-$ver2_number = "{\"verification_number\":$ver_number}";
+$ver2_number = "{\"verification_code\":$ver_number}";
+
 
 //comparing the verification number set by the one in the database
 if($ver_json == $ver2_number){
