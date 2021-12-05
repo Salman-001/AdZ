@@ -8,10 +8,10 @@ $password = '';
 
 
 //Username or email input
-if(isset($_GET["inputt"]) && $_GET["inputt"] != ""){
+if(isset($_GET["inputt"]) || $_GET["inputt"] != ""){
 	$input = mysqli_real_escape_string($connection, $_GET["inputt"]);
 }else{
-	die("Error:Input tour email or username");
+	die("Error:Input your email or username");
 }
 
 

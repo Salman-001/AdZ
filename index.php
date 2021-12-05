@@ -106,7 +106,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="categories">
 				<!-- search bar code starts -->
   				<div class="containerse">
-    				<input type="text" placeholder="Search...">
+    				<input type="text" placeholder="Search..." name="query">
    				 <div class="search"></div>
   				</div>
 				  <!-- search bar code end -->

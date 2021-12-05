@@ -244,7 +244,7 @@ var elem=$('#container ul');
                                                 <?php echo $rows['product_name']; ?>
                                             </h5>
 											<span class="adprice">
-                                               <i>Seller: <?php echo $rows['first_name'] . " " . $rows['last_name']; ?>
+                                               <i>Seller: <?php echo $rows['first_name'] . " " . $rows['last_name']; ?> <br>
 												Phone Number: <?php echo $rows['phone_number'];?></i>
                                             </span>
                                             <span class="adprice">

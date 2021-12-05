@@ -230,10 +230,9 @@ var elem=$('#container ul');
 							<ul class="list">
                                 <?php
                                 include('connection.php');
-								//include 'vehicles.php' ;
 
-								$filter = $_GET['search'];
-                                $sql = "SELECT * FROM query_view WHERE category_id=1 OR category_id=2 WHERE name LIKE '$filter'";
+                                $filter = $_GET["query"];
+								$sql = "SELECT * FROM query_view WHERE category_id=1 OR category_id=2 AND product_name like '" . $filter . "'";
                                 $result = $connection->query($sql);
 
                                 if ($result->num_rows>0){
@@ -246,7 +245,7 @@ var elem=$('#container ul');
                                                 <?php echo $rows['product_name']; ?>
                                             </h5>
 											<span class="adprice">
-                                               <i>Seller: <?php echo $rows['first_name'] . " " . $rows['last_name']; ?>
+                                               <i>Seller: <?php echo $rows['first_name'] . " " . $rows['last_name']; ?> <br>
 												Phone Number: <?php echo $rows['phone_number'];?></i>
                                             </span>
                                             <span class="adprice">
