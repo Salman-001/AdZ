@@ -103,7 +103,7 @@ var elem=$('#container ul');
 <div class="header">
 		<div class="container">
 			<div class="logo">
-				<a href="index.html">ADZ</a> <span>Mobile Phones and Accessories</span>
+				<a href="index.php">ADZ</a> <span>Mobile Phones and Accessories</span>
 			</div>
 			<div class="header-right">
 			<a class="account" href="login.html">My Account</a>
@@ -140,7 +140,7 @@ var elem=$('#container ul');
 				<div class="clearfix"></div>
 			</div>
 			<ol class="breadcrumb" style="margin-bottom: 5px;">
-			  <li><a href="index.html">Home</a></li>
+			  <li><a href="index.php">Home</a></li>
 			  <li><a href="categories.html">Categories</a></li>
 			  <li><a href="mobilephones&acc.php">Mobile Phones & Accessories</a></li>
 			  <li class="active">Search</li>
@@ -337,7 +337,7 @@ var elem=$('#container ul');
 			<div class="footer-bottom text-center">
 			<div class="container">
 				<div class="footer-logo">
-					<a href="index.html">ADZ</a>
+					<a href="index.php">ADZ</a>
 				</div>
 				<div class="footer-social-icons">
 					<ul>
