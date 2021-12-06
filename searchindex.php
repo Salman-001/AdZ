@@ -367,8 +367,8 @@ var elem=$('#container ul');
 				<div class="footer-social-icons">
 					<ul>
 						<li><a class="facebook" href="#"><span>Facebook</span></a></li>
-						<li><a class="twitter" href="#"><span>Twitter</span></a></li>
-						<li><a class="flickr" href="#"><span>Flickr</span></a></li>
+						<li><a class="twitter" href="https://m.twitter.com/login"><span>Twitter</span></a></li>
+						<li><a class="flickr" href="https://www.flickr.com/photos/adzforleb/"><span>Flickr</span></a></li>
 					</ul>
 				</div>
 				<div class="copyrights">

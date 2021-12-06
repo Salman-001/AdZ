@@ -548,9 +548,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="footer-social-icons">
 					<ul>
 						<li><a class="facebook" href="#"><span>Facebook</span></a></li>
-						<li><a class="twitter" href="#"><span>Twitter</span></a></li>
-						<li><a class="flickr" href="#"><span>Flickr</span></a></li>
-						<li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
+						<li><a class="twitter" href="https://twitter.com/AdzForl"><span>Twitter</span></a></li>
+						<li><a class="flickr" href="https://www.flickr.com/photos/adzforleb/"><span>Flickr</span></a></li>
 					</ul>
 				</div>
 				<div class="copyrights">
