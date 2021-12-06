@@ -161,8 +161,8 @@ var elem=$('#container ul');
 							 $( "#slider-range" ).slider({
 										range: true,
 										min: 0,
-										max: 9000,
-										values: [ 50, 6000 ],
+										max: 500000,
+										values: [ 0, 500000 ],
 										slide: function( event, ui ) {  $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
 										}
 							 });

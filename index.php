@@ -19,21 +19,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <!--chatbotscript-->
 <link rel="stylesheet" href="css/jquery.convform.css">
-<script src="js/jquery-3.1.1.min.js"></script> 
-<script src="js/jquery.convform.js"></script> 
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.convform.js"></script>
 <script src="js/custom.js"></script>
 <!--chatbotscript end-->
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Resale Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+<meta name="keywords" content="Resale Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
 <!--fonts-->
 <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<!--//fonts-->	
+<!--//fonts-->
 <!-- js -->
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <!-- js -->
@@ -95,7 +95,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<div class="main-banner banner text-center">
-	  <div class="container">    
+	  <div class="container">
 			<h1>Sell or Advertise   <span class="segment-heading">    anything online </span> with ADZ</h1>
 			<p>Buy & Sell</p>
 			<a href="post-ad.html">Post Free Ad</a>
@@ -105,8 +105,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="content">
 			<div class="categories">
 				<!-- search bar code starts -->
-  				<div class="containerse">
-    				<input type="text" placeholder="Search..." name="query">
+
+				<div class="containerse">
+					<form name="searchform" action="searchindex.php"  method="GET">
+					<input type="text" placeholder="Search..." name="query" id="searchbar">
+				</form>
+				<script>
+					function submitOnEnter(e) {
+    					var theEvent = e || window.event;
+    					if(theEvent.keyCode == 13) {
+        					this.submit;
+							document.searchform.reset();
+    					}
+    				return true;
+					}
+				document.getElementById("searchfrom").onkeypress = function(e) { return submitOnEnter(e); }
+
+				</script>
    				 <div class="search"></div>
   				</div>
 				  <!-- search bar code end -->
@@ -182,7 +197,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 						</a>
-					</div>	
+					</div>
 					<div class="col-md-2 focus-grid">
 						<a href="categories.html#parentVerticalTab5">
 							<div class="focus-border">
@@ -202,7 +217,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 						</a>
-					</div>	
+					</div>
 					<div class="col-md-2 focus-grid">
 						<a href="categories.html#parentVerticalTab7">
 							<div class="focus-border">
@@ -212,7 +227,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 						</a>
-					</div>	
+					</div>
 					<div class="col-md-2 focus-grid">
 						<a href="categories.html#parentVerticalTab8">
 							<div class="focus-border">
@@ -222,7 +237,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 						</a>
-					</div>	
+					</div>
 					<div class="col-md-2 focus-grid">
 						<a href="categories.html#parentVerticalTab9">
 							<div class="focus-border">
@@ -232,7 +247,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 						</a>
-					</div>	
+					</div>
 					<div class="col-md-2 focus-grid">
 						<a href="categories.html#parentVerticalTab10">
 							<div class="focus-border">
@@ -268,7 +283,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<a href="single.html">
 											<img src="images/p1.jpg"/>
 											<span class="price">&#36; 450</span>
-										</a> 
+										</a>
 										<div class="ad-info">
 											<h5>There are many variations of passages</h5>
 											<span>1 hour ago</span>
@@ -278,7 +293,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<a href="single.html">
 											<img src="images/p2.jpg"/>
 											<span class="price">&#36; 399</span>
-										</a> 
+										</a>
 										<div class="ad-info">
 											<h5>Lorem Ipsum is simply dummy</h5>
 											<span>3 hour ago</span>
@@ -288,7 +303,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<a href="single.html">
 											<img src="images/p3.jpg"/>
 											<span class="price">&#36; 199</span>
-										</a> 
+										</a>
 										<div class="ad-info">
 											<h5>It is a long established fact that a reader</h5>
 											<span>8 hour ago</span>
@@ -298,7 +313,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<a href="single.html">
 											<img src="images/p4.jpg"/>
 											<span class="price">&#36; 159</span>
-										</a> 
+										</a>
 										<div class="ad-info">
 											<h5>passage of Lorem Ipsum you need to be</h5>
 											<span>19 hour ago</span>
@@ -310,7 +325,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<a href="single.html">
 											<img src="images/p5.jpg"/>
 											<span class="price">&#36; 1599</span>
-										</a> 
+										</a>
 										<div class="ad-info">
 											<h5>There are many variations of passages</h5>
 											<span>1 hour ago</span>
@@ -320,7 +335,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<a href="single.html">
 											<img src="images/p6.jpg"/>
 											<span class="price">&#36; 1099</span>
-										</a> 
+										</a>
 										<div class="ad-info">
 											<h5>passage of Lorem Ipsum you need to be</h5>
 											<span>1 day ago</span>
@@ -330,7 +345,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<a href="single.html">
 											<img src="images/p7.jpg"/>
 											<span class="price">&#36; 109</span>
-										</a> 
+										</a>
 										<div class="ad-info">
 											<h5>It is a long established fact that a reader</h5>
 											<span>9 hour ago</span>
@@ -340,7 +355,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<a href="single.html">
 											<img src="images/p8.jpg"/>
 											<span class="price">&#36; 189</span>
-										</a> 
+										</a>
 										<div class="ad-info">
 											<h5>Lorem Ipsum is simply dummy</h5>
 											<span>3 hour ago</span>
@@ -352,7 +367,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<a href="single.html">
 											<img src="images/p9.jpg"/>
 											<span class="price">&#36; 2599</span>
-										</a> 
+										</a>
 										<div class="ad-info">
 											<h5>Lorem Ipsum is simply dummy</h5>
 											<span>3 hour ago</span>
@@ -362,7 +377,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<a href="single.html">
 											<img src="images/p10.jpg"/>
 											<span class="price">&#36; 3999</span>
-										</a> 
+										</a>
 										<div class="ad-info">
 											<h5>It is a long established fact that a reader</h5>
 											<span>9 hour ago</span>
@@ -372,7 +387,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<a href="single.html">
 											<img src="images/p11.jpg"/>
 											<span class="price">&#36; 2699</span>
-										</a> 
+										</a>
 										<div class="ad-info">
 											<h5>passage of Lorem Ipsum you need to be</h5>
 											<span>1 day ago</span>
@@ -382,7 +397,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<a href="single.html">
 											<img src="images/p12.jpg"/>
 											<span class="price">&#36; 899</span>
-										</a> 
+										</a>
 										<div class="ad-info">
 											<h5>There are many variations of passages</h5>
 											<span>1 hour ago</span>
@@ -396,25 +411,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								visibleItems:1,
 								animationSpeed: 1000,
 								autoPlay: true,
-								autoPlaySpeed: 5000,    		
+								autoPlaySpeed: 5000,
 								pauseOnHover: true,
 								enableResponsiveBreakpoints: true,
-								responsiveBreakpoints: { 
-									portrait: { 
+								responsiveBreakpoints: {
+									portrait: {
 										changePoint:480,
 										visibleItems:1
-									}, 
-									landscape: { 
+									},
+									landscape: {
 										changePoint:640,
 										visibleItems:1
 									},
-									tablet: { 
+									tablet: {
 										changePoint:768,
 										visibleItems:1
 									}
 								}
 							});
-							
+
 						});
 					   </script>
 					   <script type="text/javascript" src="js/jquery.flexisel.js"></script>
@@ -437,7 +452,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                 <?php echo $rows['product_name']; ?>
                                             </h5>
 											<span class="adprice">
-                                               <i>Seller: <?php echo $rows['first_name'] . " " . $rows['last_name']; ?>
+                                               <i>Seller: <?php echo $rows['first_name'] . " " . $rows['last_name']; ?> <br>
 												Phone Number: <?php echo $rows['phone_number'];?></i>
                                             </span>
                                             <span class="adprice">
@@ -467,21 +482,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span class="cityname">City name</span>
 									</section>
 									<div class="clearfix"></div>
-									</li> 
+									</li>
 								</a>-->
 							</ul>
 
 			</div>
 		</div>
-			<!-- //slider 1 finishes -->		
-			
+			<!-- //slider 1 finishes -->
+
 			<!-- //slider 2 start -->
-			
+
 
 			<!-- //slider 2 finishes-->
-			
-			
-		<!--footer section start,      edited  to add space for feedback-->		
+
+
+		<!--footer section start,      edited  to add space for feedback-->
 		<footer>
 			<div class="footer-top">
 				<div class="container">
@@ -493,35 +508,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<li><span class="glyphicon glyphicon-map-marker"></span></li>
 									<li>Beirut, Malla, Hassan Building</li>
 									<div class="clearfix"></div>
-								</ul>	
+								</ul>
 								<ul class="location">
 									<li><span class="glyphicon glyphicon-earphone"></span></li>
 									<li>+961 03 102 318</li>
 									<div class="clearfix"></div>
-								</ul>	
+								</ul>
 								<ul class="location">
 									<li><span class="glyphicon glyphicon-envelope"></span></li>
 									<li><a href="mailto:info@example.com">ADZforlebanon@outlook.com</a></li>
 									<div class="clearfix"></div>
-								</ul>						
+								</ul>
 							</address>
 						</div>
 						<div class="clearfix"></div>
-						
-					</div>						
-				</div>	
-			</div>	
+
+					</div>
+				</div>
+			</div>
 			<!--feedback form added here ->
 			<form class="cf">
 				<div class="half left cf">
 				<h6>Send us Your FeedBack</h6>
 				  <input type="text" id="input-name" placeholder="Name">
 				  <input type="email" id="input-email" placeholder="Email address">
-				  
+
 				</div>
 				<div class="half right cf">
 				  <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
-				</div>  
+				</div>
 				<input type="submit" value="Submit" id="input-submit">
 			  </form>
 			  <!--feedback form ended here -->
@@ -544,12 +559,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		<!--added feedback -->
-		
-		
+
+
 		</footer>
         <!--footer section end-->
 		<!--Chat Bot start-->
-		<div class ="chatbot_icon">  
+		<div class ="chatbot_icon">
 			<span class="glyphicon glyphicon-leaf"></span></p>
 		 </div>
 		 <div class="chat_box">
@@ -572,11 +587,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 		</div>
-			
+
 		   </form>
 		  </div>
 		 </div>
-		
+
 </body>
 </html>
 
