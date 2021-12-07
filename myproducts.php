@@ -127,14 +127,15 @@ var elem=$('#container ul');
 				<a href="index.php">ADZ</a> <span>Vehicles</span>
 			</div>
 			<div class="header-right">
-			<a class="account" href="login.html">My Account</a>
+			<a class="account" href="myaccount.php">My Personal Information</a>
 		</div>
 		</div>
 	</div>
 	<div class="banner text-center">
 	  <div class="container">    
 			<h1>Sell or Advertise   <span class="segment-heading">    anything online </span> with ADZ</h1>
-			<a href="post-ad.html">Post Free Ad</a>
+			<a href="ad.php">Post Free Ad</a>
+			<a href="myprod.php">Personal Ads</a>
 	  </div>
 	</div>
 	<!-- Personal ads -->

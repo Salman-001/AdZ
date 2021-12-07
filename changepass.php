@@ -41,6 +41,6 @@ mysqli_error($connection);
 
 echo "Password changed successfully<br>";
 
-echo "Go back to <a href=\"index.html\">Homepage</a>";
+echo "Go back to <a href=\"index.php\">Homepage</a>";
 
 ?>

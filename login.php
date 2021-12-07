@@ -67,7 +67,7 @@ if($ver_json == "{\"verified\":\"True\"}"){
 	}
 
 }elseif($ver_json == "{\"verified\":\"False\"}"){
-	echo "You need to verify your email first";
+	echo "You need to <a href=\"verify.html\" style=\"text-decoration:none\">Verify</a> your email first";
 }else {
 	print $inputt;
 	echo "No user found";
