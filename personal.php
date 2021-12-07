@@ -95,7 +95,7 @@ $final_phone = (int) filter_var($phone_json, FILTER_SANITIZE_NUMBER_INT);
 
     <h4 style="text-align:center">Last name: <?php echo $final_last ?> <a href="change_lname.html"><button>Change Last Name</button></a></h4>
 
-    <h4 style="text-align:center">Username: <?php echo $final_usr ?> <a href="change_usr.html"><button>Change Username</button></a></h4>
+    <h4 style="text-align:center">Username: <?php echo $final_usr ?></h4>
 
     <h4 style="text-align:center">Email: <?php echo $final_email ?></h4>
 

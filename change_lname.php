@@ -14,7 +14,7 @@ if(isset($_POST["lname"]) && $_POST["lname"] != ""){
     die("Error: Input your new last name");
 }
 
-//query to change first name
+//query to change last name
 $fname_query = $connection->prepare("UPDATE users SET last_name='$new_lname' WHERE username=? or email=?");
 $fname_query->bind_param("ss", $_SESSION["input"], $_SESSION["input"]);
 $fname_query->execute();
