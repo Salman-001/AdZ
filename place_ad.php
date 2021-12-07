@@ -4,6 +4,10 @@ include ("connection.php");
 
 session_start();
 
+if(!isset($_SESSION["input"])){
+    die("Error: You need to login first");
+}
+
 $input_query = "SELECT user_id FROM users WHERE username = ? or email = ?";
 $input_stmt = $connection->prepare($input_query);
 $input_stmt->bind_param("ss", $_SESSION["input"], $_SESSION["input"]);
@@ -97,19 +101,12 @@ if(isset($_POST["price"]) && $_POST["price"] != ""){
 
 
 
+if(!empty($_FILES['image']['name'])){
+    $image_name= $_FILES['image']['name'];
+}else{
+    die("Error: upload an image");
+}
 
- 
-// If file upload form is submitted 
-
-/* if(!empty($_FILES["image"]["name"])) { 
-    
-    $imgContent = "uploads/" . $_FILES["image"]["name"];
-    
-}else{ 
-    $statusMsg = 'Please select an image file to upload.'; 
-}  */
-
-$image_name=$_FILES['image']['name'];
 $temp = explode(".", $image_name);
 $newfilename = round(microtime(true)) . '.' . end($temp);
 $imagepath="uploads/".$newfilename;

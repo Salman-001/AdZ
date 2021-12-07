@@ -61,9 +61,9 @@ if($ver_json == "{\"verified\":\"True\"}"){
 	$password_check = "{\"password\":\"$password\"}";
 
 	if($json == $password_check){
-		header("Location:index.html");
+		header("Location:index.php");
 	}else {
-    	echo "Failed to log in";
+    	echo "Error: Incorrect password";
 	}
 
 }elseif($ver_json == "{\"verified\":\"False\"}"){

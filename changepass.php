@@ -4,6 +4,10 @@ include("connection.php");
 
 session_start();
 
+if($_SESSION["input"] == ""){
+    die("You need to log in");
+}
+
 //get new password
 if(isset($_POST["password_1"]) && $_POST["password_1"] != ""){
     $password_1 = $_POST["password_1"];

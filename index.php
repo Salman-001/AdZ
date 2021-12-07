@@ -90,7 +90,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<a href="index.php">ADZ | From A to Z </a>
 			</div>
 			<div class="header-right">
-			<a class="account" href="login.html">My Account</a>
+			<a class="account" href="myaccount.php">My Account</a>
 		</div>
 		</div>
 	</div>
@@ -98,7 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	  <div class="container">
 			<h1>Sell or Advertise   <span class="segment-heading">    anything online </span> with ADZ</h1>
 			<p>Buy & Sell</p>
-			<a href="post-ad.html">Post Free Ad</a>
+			<a href="ad.php">Post Free Ad</a>
 	  </div>
 	</div>
 		<!-- content-starts-here -->
