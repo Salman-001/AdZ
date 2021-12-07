@@ -147,7 +147,7 @@ $mysql = $connection->prepare("INSERT INTO users(first_name, last_name, username
 $mysql->bind_param("ssssssis", $fname, $lname, $username, $email, $phone, $password, $verification_num, $bool);
 $mysql->execute();
 
-
+echo mysqli_error($connection);
 
 $mysql->close();
 $connection->close();

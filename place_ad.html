@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Ad</title>
+</head>
+<body>
+
+    <h2>Post an AD</h2>
+
+    <form action="a.php" method="post" enctype="multipart/form-data">
+
+        <select class="" name="category">
+            <option value="1">Select Category</option>
+            <option value="2">Vehicles For Sale</option>
+            <option value="3">Vehicles For Rent</option>
+            <option value="4">Properties For Sale</option>
+            <option value="5">Properties For Rent</option>
+            <option value="6">Mobile Phones & Accessories</option>
+            <option value="7">Home Furniture</option>
+            <option value="8">Equipment</option>
+        </select>
+
+        <p></p>
+
+        <input type="text" name="product_name" placeholder="Ad Name..." required>
+
+        <p></p>
+
+        <textarea name="description" required>Write few lines about your product...</textarea>
+
+        <p></p>
+
+        <input type="file" name="image">
+
+        <p></p>
+
+        <input type="number" name="price" placeholder="Price..." minlength="0.25" maxlength="500000">
+
+        <p></p>
+
+        <button type="submit">POST</button>
+
+    </form>
+    
+</body>
+</html>
