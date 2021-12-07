@@ -151,6 +151,16 @@ echo mysqli_error($connection);
 
 $mysql->close();
 $connection->close();
+
+//the subject
+$sub = "VERIFICATION CODE";
+//the message
+$msg = "Your Verification Number is: " . $ver2_number;
+//recipient email here
+$rec = $email;
+//send email
+mail($rec,$sub,$msg);
+
 header("Location:verify.html");
 
 
