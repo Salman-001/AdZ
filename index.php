@@ -584,14 +584,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		</footer>
         <!--footer section end-->
-		<!--Chat Bot start-->
+		<!--Chat Bot start   still being worked on functionality not done-->
 		<div class ="chatbot_icon">
 			<span class="glyphicon glyphicon-leaf"></span></p>
 		 </div>
 		 <div class="chat_box">
+		      work in progress
 		   <div class="conv-form-wrapper">
-		         <form action="" method="get">
-					 <div class="hidden">
+			   
+		        <!-- <form action="" method="get">
+					
 			       <select name="programmer" data-conv-question="So, are you a programmer? (this question will fork the conversation based on your answer)">
 				<option value="yes">Yes</option>
 				<option value="no">No</option>
@@ -605,13 +607,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<option value="yes">Yes</option>
 						<option value="no">No..</option>
 					</select>
-				</div>
+			
 			</div>
 		</div>
 
 		   </form>
 		  </div>
-		 </div>
+		 </div>-->
 
 </body>
 </html>
