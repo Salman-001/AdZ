@@ -8,6 +8,7 @@ if(!isset($_SESSION["input"])){
     die("Error: You need to login first");
 }
 
+//get user_id for the user
 $input_query = "SELECT user_id FROM users WHERE username = ? or email = ?";
 $input_stmt = $connection->prepare($input_query);
 $input_stmt->bind_param("ss", $_SESSION["input"], $_SESSION["input"]);
@@ -73,7 +74,6 @@ $category_json = json_encode($category_row);
 $category_id = (int) filter_var($category_json, FILTER_SANITIZE_NUMBER_INT);
 
 
-
 if(isset($_POST["product_name"]) && $_POST["product_name"] != ""){
     
     $prod_name = mysqli_real_escape_string($connection, $_POST["product_name"]);
@@ -102,26 +102,33 @@ if(isset($_POST["price"]) && $_POST["price"] != ""){
 
 
 if(!empty($_FILES['image']['name'])){
-    $image_name= $_FILES['image']['name'];
+    $filename = $_FILES["image"]["name"];
 }else{
     die("Error: upload an image");
 }
 
-$temp = explode(".", $image_name);
+/* $temp = explode(".", $image_name);
 $newfilename = round(microtime(true)) . '.' . end($temp);
-$imagepath="uploads/".$newfilename;
-move_uploaded_file($_FILES["image"]["tmp_name"],$imagepath);
-
 $img = (string) "uploads/" . $_FILES['image']['name'];
+$imagepath="uploads/".$img;
+move_uploaded_file($_FILES["image"]["tmp_name"],$img); */
+
+$tempname = $_FILES["image"]["tmp_name"];    
+$folder = "uploads/".$filename;
+move_uploaded_file($_FILES["image"]["tmp_name"],$folder);
+
 
 
 // Insert image content into database 
 $insert_query = $connection->prepare("INSERT INTO products(name, category_id, description, price, pictures, user_id) VALUES (?,?,?,?,?,?)"); 
-$insert_query->bind_param("sisisi", $prod_name, $category_id, $prod_des, $prod_price, $img, $id);
+$insert_query->bind_param("sisisi", $prod_name, $category_id, $prod_des, $prod_price, $folder, $id);
 $insert_query->execute();
 
 echo mysqli_error($connection);
 
-echo $image_name . "<br>" . $imagepath . "<br>" . $img;
+/* echo $filename . "<br>" . $folder . "<br>" . $category_id . "<br>" . $prod_category; */
+
+echo "Your ad is successfully posted<br>";
+echo "Go to <a href=\"myproducts.php\">My Products</a> to view your ad";
 
 ?>

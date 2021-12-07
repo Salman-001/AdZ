@@ -90,15 +90,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<a href="index.php">ADZ | From A to Z </a>
 			</div>
 			<div class="header-right">
-			<a class="account" href="myaccount.php">My Account</a>
+			<a class="account" href="myaccount.php">My Personal Information</a>
 		</div>
-		</div>
+		
 	</div>
 	<div class="main-banner banner text-center">
 	  <div class="container">
-			<h1>Sell or Advertise   <span class="segment-heading">    anything online </span> with ADZ</h1>
+			<?php 
+			include("connection.php");
+			session_start();
+			if(isset($_SESSION["input"])){
+				//get username
+				$username_query = $connection->prepare("SELECT username FROM users WHERE username=? or email=?");
+				$username_query->bind_param("ss", $_SESSION["input"], $_SESSION["input"]);
+				$username_query->execute();
+
+				$username_results = $username_query->get_result();
+
+				$username_row = $username_results->fetch_assoc();
+				$username_json = json_encode($username_row);
+
+				$usr = explode("\"", $username_json);
+
+				$final_usr = $usr[3];
+			}else{
+				$final_usr = "";
+			}
+			?>
+			<h1>Welcome back <?php echo $final_usr; ?>, Sell or Advertise   <span class="segment-heading">    anything online </span> with ADZ</h1>
 			<p>Buy & Sell</p>
 			<a href="ad.php">Post Free Ad</a>
+			<a href="myprod.php">Personal Ads</a>
 	  </div>
 	</div>
 		<!-- content-starts-here -->

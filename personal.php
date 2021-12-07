@@ -102,6 +102,9 @@ $final_phone = (int) filter_var($phone_json, FILTER_SANITIZE_NUMBER_INT);
     <h4 style="text-align:center">Phone number: <?php echo $final_phone ?></h4>
 
     <a href="logout.php" style="text-decoration:none"><button style="display:block;margin:0 auto">Log out</button></a>
+    <p></p>
+    <a href="changepass.html" style="text-decoration:none"><button style="display:block;margin:0 auto">Change Password</button></a>
+
 
 </body>
 </html>
